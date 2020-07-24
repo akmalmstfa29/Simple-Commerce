@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@homepage')->name('homepage');
+Route::get('/product-detail/{product}', 'HomeController@productDetail')->name('product-detail');
 
 Auth::routes();
 
