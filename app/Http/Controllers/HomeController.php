@@ -96,12 +96,13 @@ class HomeController extends Controller
     public function updateCart(Request $req, Cart $cart)
     {
         $input = $req->all();
-        
-        foreach ($input['items'] as $id => $item) {
+        $items = @$input['items'] ? $input['items'] : [];
+
+        foreach ($items as $id => $item) {
             $cart->find($id)->update(['qty' => $item['qty']]);
         }
         
-        $cart->whereNotIn('id', array_keys($input['items']))->delete();
+        $cart->whereNotIn('id', array_keys($items))->delete();
         return redirect(route('homepage'));
     }
 }

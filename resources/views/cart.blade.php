@@ -210,12 +210,6 @@
 			$('input[name=total]').trigger('change')
 
 			countTotal()
-
-			$('table[name=cart]').find('tbody').on('update', function(){
-				$('button[type=submit]').prop('disabled', $(this).find('tr').length ? false : true)
-			});
-
-			$('table[name=cart]').find('tbody').trigger('update')
 		});
 
 		function countTotal() {
