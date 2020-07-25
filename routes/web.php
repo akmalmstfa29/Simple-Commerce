@@ -13,6 +13,9 @@
 
 Route::get('/', 'HomeController@homepage')->name('homepage');
 Route::get('/product-detail/{product}', 'HomeController@productDetail')->name('product-detail');
+Route::get('/cart', 'HomeController@cart')->name('cart');
+Route::post('/cart', 'HomeController@addToCart')->name('add-to-cart');
+Route::post('/update-cart', 'HomeController@updateCart')->name('update-cart');
 
 Auth::routes();
 

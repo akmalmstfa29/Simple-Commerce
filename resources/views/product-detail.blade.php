@@ -40,11 +40,12 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
                     sint voluptatibus!
                     Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
-
-                <form class="d-flex flex-column justify-content-left">
+                <form class="d-flex flex-column justify-content-left" action="{{route('add-to-cart')}}"  method="post">
                     <div class="d-flex flex-row">
-                        <input type="number" value="1" aria-label="Search" class="form-control mr-2" style="width: 100px">
-                        <input type="text" placeholder="Discount Code" value="" aria-label="Search" class="form-control discount-form" style="width: 140px">
+                        @csrf
+                        <input name="product_id" type="hidden" value="{{ $product->id }}">
+                        <input name="qty"  type="number" value="1" min="1" required aria-label="Search" class="form-control mr-2" style="width: 100px">
+                        <input name="discount_code" type="text" placeholder="Discount Code" value="" aria-label="Search" class="form-control discount-form" style="width: 140px">
                     </div>
                     <div class="pt-2">
                         <button class="btn btn-primary btn-md m-0 p" type="submit">Add to cart

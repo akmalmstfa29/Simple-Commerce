@@ -67,10 +67,16 @@
       <!-- Links -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <ul class="navbar-nav nav-flex-icons ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
+            <a class="nav-link waves-effect" href="/">Home</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{{route('cart')}}">
+              <span class="badge red z-depth-1 mr-1"> {{totalCart()}} </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>
@@ -161,6 +167,9 @@
 
     $('#year').text(new Date().getFullYear())
   </script>
+
+  @section('script')
+  @show
 </body>
 
 </html>

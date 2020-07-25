@@ -16,6 +16,6 @@ class Product extends Model
 
     public function setPriceAttribute($value)
     {
-        $this->attributes['price'] = $value + 0; //remove useless zero
+        return $value + 0; //remove useless zero
     }
 }
